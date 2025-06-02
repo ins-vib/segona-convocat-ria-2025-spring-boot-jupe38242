@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina principal</title>
+</head>
+<body>
+<header>
+    <h2>Selecciona partit per modificar resultats:</h2>
+</header>
+
+    <form th:action="@{/Añadir-partir-editar}" th:objrct="@{partits}" method="post">
+
+        <label>Resultats de l'quip Local:</label>
+        <input type="number" th:field="${partits.resultatsLocal}" required>
+
+        <label>Resultats de l'quip Visitant:</label>
+        <input type="number" th:field="${partits.resultatsVisitant}" required>
+
+        <button type="submit">Guardar</button>
+
+    </form>
+
+    <div th:if="${param.exito}">
+        <p style="color: green">S'ha guardat</p>
+    </div>
+
+</body>
+</html>

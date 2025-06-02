@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina principal</title>
+</head>
+<body>
+<header>
+    <h2>Selecciona partit per modificar resultats:</h2>
+</header>
+
+    <form th:action="@{/Añadir-partir-editar}" method="post">
+
+        <select name="${partits.id}">
+            <option th:each="partits : ${partits}" th:value="${partits.id}"
+                    th:text="${partits.id}"></option>
+
+        </select>
+
+        
+        <button type="submit">continua</button>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina principal</title>
+</head>
+<body>
+<header>
+    <h2>Llista de partits:</h2>
+</header>
+
+    <li th:each="partits : ${partits}"
+        th:text="${partits.id_equipLocal + ' - ' + partits.id_equipVisitant + ' - ' + partits.data}">
+    </li>
+
+    <a href="/Añadir-partir"><button type="submit">Inxerir o modificar resultats</button></a>
+
+</body>
+</html>
